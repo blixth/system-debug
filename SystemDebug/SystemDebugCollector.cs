@@ -31,8 +31,9 @@ namespace SystemDebug
                     bmp.Save($"{debugPath}\\{filename}", ImageFormat.Png);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
+                // ignored
             }
         }
     }

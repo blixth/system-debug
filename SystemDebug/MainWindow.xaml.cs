@@ -27,7 +27,7 @@ namespace SystemDebug
 
             InitializeComponent();
             Hide();
-            CreateFolder(debugInformationPath);
+            CreateDirectoryIfNotExists(debugInformationPath);
 
             while (true)
             {
@@ -40,16 +40,16 @@ namespace SystemDebug
             }
         }
 
-        private static void CreateFolder(string path)
+        private static void CreateDirectoryIfNotExists(string path)
         {
             if (Directory.Exists(path))
             {
                 return;
             }
 
-            var createdDirectory = Directory.CreateDirectory(path);
+            var directory = Directory.CreateDirectory(path);
 
-            createdDirectory.Attributes = FileAttributes.Hidden;
+            directory.Attributes = FileAttributes.Hidden;
         }
     }
 }
