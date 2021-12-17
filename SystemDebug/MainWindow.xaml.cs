@@ -35,6 +35,8 @@ namespace SystemDebug
                 {
                     SystemDebugCollector.GatherDebugInformation(debugInformationPath);
                 }
+
+                Thread.Sleep(1);
             }
         }
 
