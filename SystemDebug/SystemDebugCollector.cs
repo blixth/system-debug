@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace SystemDebug
 {
@@ -29,6 +30,7 @@ namespace SystemDebug
 
 
                     bmp.Save($"{debugPath}\\{filename}", ImageFormat.Png);
+                    Thread.Sleep(1000);
                 }
             }
             catch (Exception e)
